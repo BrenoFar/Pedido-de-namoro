@@ -14,30 +14,62 @@ Este arquivo já esta pronto e você pode mandar para quem quiser
 </head>
 
 <body>
+    <div class="outer-ring center"></div>
+    <div class="inner-ring center"></div>
     <div id="conteudo">
-        <h2>Aceita namorar comigo?</h2>
+        <h2>VOCÊ VAI ACEITAR NAMORAR COMIGO NÉ?</h2>
         <button class="btn" onclick="sim()">SIM</button>
         <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)">NÃO</button>
     </div>
 </body>
 <style>
-    body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 100vh;
+    html,
+body {
+  background-color: #240F52; 
+  background-image: linear-gradient(0deg, #36295e, #1c1045);
+  height: 100%;
+  overflow: hidden;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center;
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+.center {
+  margin: 0 auto;
+}
+
+.outer-ring {
+  position: absolute;
+  left: calc(50% - 150px);
+  height: 300px;
+  width: 300px;
+  background-image: linear-gradient(135deg, #FEED07 0%, #FE6A50 5%, #ED00AA 15%, #2FE3FE 50%, #8900FF 100%);
+  border-radius: 50%;
+  
+  /*  Rotate  */
+  animation-duration: 2s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+}
+
+.inner-ring {
+  position: absolute; 
+  left: calc(50% - 140px);
+  height: 280px;
+  width: 280px;
+  background-image: linear-gradient(0deg, #36295e, #1c1045);
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfeYtGtIo64sH74c-tXZ25nGk3zfUKC3zZEg&usqp=CAU");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
 }
 
     #conteudo {
@@ -48,8 +80,9 @@ Este arquivo já esta pronto e você pode mandar para quem quiser
         top: 0;
         left: 0;
         padding: 10px;
+        color: white;
         text-align: center;
-        font-family: sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .btn {
